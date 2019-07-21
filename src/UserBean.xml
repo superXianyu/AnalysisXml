@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<myBean id = "test" autowire = "byType" >
+    <bean id="user" name ="user" src="work.soft.vo.User" init="init">
+        <member name="id" value="21"></member>
+        <member name = "name" value = "tom"></member>
+        <member name ="list" type = "list">
+            <list>aa</list>
+        </member>
+        <member name = "passwd" value="123456"></member>
+    </bean>
+    <bean id="user2" name ="user" src="work.soft.controller.MyController">
+        <member name="id" value="21"></member>
+        <member name = "name" value = "tom"></member>
+        <member name = "passwd" value="123456"></member>
+    </bean>
+
+    <bean id="member" name ="member" src="work.soft.vo.Member">
+        <member name="memberId" value="21" autowire =  "byType"></member>
+        <member name = "muser" ref="user2"></member>
+    </bean>
+</myBean>
